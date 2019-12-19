@@ -3,7 +3,7 @@ package ua.edu.ucu.iterators;
 import java.util.Iterator;
 
 public class StreamIterable implements Iterable<Integer> {
-    int[] array;
+    private int[] array;
 
     public StreamIterable(int... values) {
         array = values;

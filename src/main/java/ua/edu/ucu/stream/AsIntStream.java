@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 public class AsIntStream implements IntStream {
-    Iterable<Integer> iterator;
+    private Iterable<Integer> iterator;
 
     private AsIntStream(Iterable<Integer> iterator) {
         this.iterator = iterator;
@@ -107,7 +107,7 @@ public class AsIntStream implements IntStream {
 
     @Override
     public int reduce(int identity, IntBinaryOperator op) {
-        int res=identity;
+        int res = identity;
         for (int elem : iterator) {
             res = op.apply(res, elem);
         }
