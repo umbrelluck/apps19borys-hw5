@@ -19,22 +19,21 @@ public class FlatMapIterable implements Iterable<Integer> {
     public Iterator<Integer> iterator() {
         Iterator<Integer> itr = previous.iterator();
         return new Iterator<Integer>() {
-            Iterator<Integer> newStream;
+            private Iterator<Integer> newStream;
 
-            @Override
             public boolean hasNext() {
                 if (newStream != null && newStream.hasNext()) {
                     return true;
                 }
                 if (itr.hasNext()) {
                     newStream =
-                            ((AsIntStream) fun.applyAsIntStream(itr.next())).getIterator();
+                            ((AsIntStream) fun.applyAsIntStream(itr.next()))
+                                    .getIterator();
                     return true;
                 }
                 return false;
             }
 
-            @Override
             public Integer next() {
                 return newStream.next();
             }

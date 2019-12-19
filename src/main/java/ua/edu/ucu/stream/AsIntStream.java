@@ -73,8 +73,9 @@ public class AsIntStream implements IntStream {
     public Integer sum() {
         checker();
         int sum = 0;
-        for (int elem : iterator)
+        for (int elem : iterator) {
             sum += elem;
+        }
         return sum;
         //To change body of generated methods, choose Tools | Templates.
     }
@@ -106,10 +107,11 @@ public class AsIntStream implements IntStream {
 
     @Override
     public int reduce(int identity, IntBinaryOperator op) {
+        int res=identity;
         for (int elem : iterator) {
-            identity = op.apply(identity, elem);
+            res = op.apply(res, elem);
         }
-        return identity;
+        return res;
         //To change body of generated methods, choose Tools | Templates.
     }
 
