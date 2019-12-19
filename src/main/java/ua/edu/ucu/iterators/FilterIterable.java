@@ -4,14 +4,13 @@ import ua.edu.ucu.function.IntPredicate;
 
 import java.util.Iterator;
 
-public class FilterIterable implements Iterable<Integer> {
+public class FilterIterable extends StreamIterable {
     private Iterable<Integer> previous;
     private IntPredicate predicate;
 
     public FilterIterable(Iterable<Integer> iter, IntPredicate pr) {
         previous = iter;
         predicate = pr;
-
     }
 
     @Override

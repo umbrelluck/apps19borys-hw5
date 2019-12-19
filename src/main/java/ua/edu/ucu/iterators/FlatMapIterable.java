@@ -5,7 +5,7 @@ import ua.edu.ucu.stream.AsIntStream;
 
 import java.util.Iterator;
 
-public class FlatMapIterable implements Iterable<Integer> {
+public class FlatMapIterable extends StreamIterable {
     private Iterable<Integer> previous;
     private IntToIntStreamFunction fun;
 

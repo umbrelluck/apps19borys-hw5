@@ -4,7 +4,7 @@ import ua.edu.ucu.function.IntUnaryOperator;
 
 import java.util.Iterator;
 
-public class MapIterable implements Iterable<Integer> {
+public class MapIterable extends StreamIterable {
     private Iterable<Integer> previous;
     private IntUnaryOperator fun;
 
