@@ -91,6 +91,6 @@ public class AsIntStreamTest {
     @Test
     public void toArray() {
         assertArrayEquals(new int[]{1, 2, 3, -5, 10, 9, 7}, stream.toArray());
-        assertArrayEquals(null, empty.toArray());
+        assertArrayEquals(new int[0], empty.toArray());
     }
 }

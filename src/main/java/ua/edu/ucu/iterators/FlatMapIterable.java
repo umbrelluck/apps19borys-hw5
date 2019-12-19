@@ -1,6 +1,5 @@
 package ua.edu.ucu.iterators;
 
-import ua.edu.ucu.function.IntPredicate;
 import ua.edu.ucu.function.IntToIntStreamFunction;
 import ua.edu.ucu.stream.AsIntStream;
 
