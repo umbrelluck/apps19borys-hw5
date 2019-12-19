@@ -18,7 +18,6 @@ public class AsIntStreamTest {
 
     @Test
     public void of() {
-//        assertTrue(stream.getClass().isInstance(IntStream));
         assertEquals(AsIntStream.class, stream.getClass());
         assertEquals(AsIntStream.class, empty.getClass());
     }
