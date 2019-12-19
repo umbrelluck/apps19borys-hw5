@@ -115,6 +115,9 @@ public class AsIntStream implements IntStream {
 
     @Override
     public int[] toArray() {
+        if (count()==0) {
+            return null;
+        }
         int[] res = new int[(int) count()];
         int i = 0;
         for (int elem : iterator) {

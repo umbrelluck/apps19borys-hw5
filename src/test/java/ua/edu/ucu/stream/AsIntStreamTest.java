@@ -18,13 +18,15 @@ public class AsIntStreamTest {
 
     @Test
     public void of() {
-        assertEquals(IntStream.class, stream.getClass());
-        assertEquals(IntStream.class, empty.getClass());
+//        assertTrue(stream.getClass().isInstance(IntStream));
+        assertEquals(AsIntStream.class, stream.getClass());
+        assertEquals(AsIntStream.class, empty.getClass());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void average() {
-        assertEquals(3.85, stream.average(), 0.001);
+        double rs = stream.average();
+        assertEquals(3.85, stream.average(), 0.01);
         empty.average();
     }
 
@@ -55,11 +57,13 @@ public class AsIntStreamTest {
     @Test
     public void filter() {
         IntStream res = stream.filter(x -> x % 2 == 0);
-        assertArrayEquals(new int[]{1, 3, -5, 9, 7}, res.toArray());
+        assertArrayEquals(new int[]{2,10}, res.toArray());
     }
 
     @Test
     public void forEach() {
+        stream.forEach(System.out::print);
+        assertTrue(true);
     }
 
     @Test
@@ -70,6 +74,9 @@ public class AsIntStreamTest {
 
     @Test
     public void flatMap() {
+        IntStream res = stream.flatMap(x -> AsIntStream.of(x * x, x / 2, x % 3));
+        assertArrayEquals(new int[]{1, 0, 1, 4, 1, 2, 9, 1, 0, 25, -2, -2, 100, 5, 1, 81, 4
+                , 0, 49, 3, 1}, res.toArray());
     }
 
     @Test
