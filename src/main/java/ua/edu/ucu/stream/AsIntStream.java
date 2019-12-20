@@ -7,7 +7,6 @@ import ua.edu.ucu.iterators.MapIterable;
 import ua.edu.ucu.iterators.StreamIterable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class AsIntStream implements IntStream {
