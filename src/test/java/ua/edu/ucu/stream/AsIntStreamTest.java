@@ -37,6 +37,8 @@ public class AsIntStreamTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void min() {
+//        int res = stream.min();
+//        stream = new
         assertEquals(-5, (long) stream.min());
         empty.min();
     }
@@ -56,7 +58,7 @@ public class AsIntStreamTest {
     @Test
     public void filter() {
         IntStream res = stream.filter(x -> x % 2 == 0);
-        assertArrayEquals(new int[]{2,10}, res.toArray());
+        assertArrayEquals(new int[]{2, 10}, res.toArray());
     }
 
     @Test
