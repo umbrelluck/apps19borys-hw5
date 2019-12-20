@@ -40,7 +40,7 @@ public class FlatMapIterable implements Iterator<Integer> {
 //    private Iterable<Integer> previous;
 //    private IntToIntStreamFunction fun;
 //
-//    public FlatMapIterable(Iterable<Integer> iter, IntToIntStreamFunction fn) {
+//  public FlatMapIterable(Iterable<Integer> iter, IntToIntStreamFunction fn) {
 //        previous = iter;
 //        fun = fn;
 //

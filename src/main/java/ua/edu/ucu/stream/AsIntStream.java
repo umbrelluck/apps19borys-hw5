@@ -130,13 +130,13 @@ public class AsIntStream implements IntStream {
 
     @Override
     public int[] toArray() {
-        ArrayList<Integer> tmp_res = new ArrayList<>();
+        ArrayList<Integer> tmpRes = new ArrayList<>();
         for (int elem : toIterable()) {
-            tmp_res.add(elem);
+            tmpRes.add(elem);
         }
-        int[] res = new int[tmp_res.size()];
+        int[] res = new int[tmpRes.size()];
         int i = 0;
-        for (int elem : tmp_res) {
+        for (int elem : tmpRes) {
             res[i++] = elem;
         }
         return res;
@@ -165,13 +165,4 @@ public class AsIntStream implements IntStream {
 //        }
 //    }
 
-    public static void main(String[] args) {
-        int[] lst = new int[10];
-        for (int i = 0; i < 10; i++) {
-            lst[i] = i;
-        }
-        java.util.stream.IntStream stream = Arrays.stream(lst);
-        System.out.println(stream.max());
-        System.out.println(stream.count());
-    }
 }
